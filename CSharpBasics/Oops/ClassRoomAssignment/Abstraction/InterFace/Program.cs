@@ -1,0 +1,15 @@
+﻿using System;
+namespace InterFaces;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Square number=new Square();
+        number.Number=10;
+        System.Console.WriteLine(number.Calculate());
+
+        ICalculate value=new Square();
+        value.Number=20;
+        System.Console.WriteLine(value.Calculate());
+    }
+}
