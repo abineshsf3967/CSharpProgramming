@@ -53,7 +53,7 @@ namespace CafeteriaApplication
             }
             for(int i=0;i<list.Count;i++)
             {
-                temp[i+_count]=_array[i];
+                temp[i+_count]=list._array[i];
             }
             _array=temp;
             _count+=list.Count;

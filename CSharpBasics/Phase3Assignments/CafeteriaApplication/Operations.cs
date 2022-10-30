@@ -333,7 +333,7 @@ namespace CafeteriaApplication;
                                                 cartList.AddRange(tempCartList);
                                                 foreach(CartItem cart in cartList)
                                                 {
-                                                    if(cart.OrderID==null)
+                                                    if(cart.OrderID=="")
                                                     {
                                                         cart.OrderID=order.OrderID;
                                                     }
@@ -411,13 +411,15 @@ namespace CafeteriaApplication;
 
                             if(order.OrderID==cart.OrderID)
                             {
+                                order.OrderStatus=Status.Cancelled;
+                                user.WalletBalance+=order.TotalPrice;
+                                
                                 foreach(FoodDetails food in foodList)
                                 {
                                     if(food.FoodID==cart.FoodID)
                                     {
                                     food.AvailableQuantity+=cart.OrderQuantity;
-                                    user.WalletBalance+=order.TotalPrice;
-                                    order.OrderStatus=Status.Cancelled;
+                                    
                                     }
                                 }
                             }

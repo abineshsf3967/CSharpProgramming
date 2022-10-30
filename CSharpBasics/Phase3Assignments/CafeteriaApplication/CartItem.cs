@@ -66,6 +66,7 @@ namespace CafeteriaApplication
         {
             s_itemID++;
             ItemID="ITID"+s_itemID;
+            OrderID="";
             FoodID=foodID;
             OrderPrice=orderPrice;
             OrderQuantity=orderQuantity;
